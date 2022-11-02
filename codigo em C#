@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CalculoMedia
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Informe seu nome: ");
+            String nome = (Console.ReadLine());
+
+            Console.WriteLine("Informe sua Primeira nota: ");
+            double nota1 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Informe sua Segunda nota: ");
+            double nota2 = double.Parse(Console.ReadLine());
+
+            double Avnormal = (nota1 + nota2);
+
+            if (Avnormal >= 7)
+            {
+                Console.WriteLine(nome + " sua media foi " + Avnormal + " você está aprovado.");
+            }
+            else if (Avnormal < 7 && Avnormal >=4)
+            {
+                Console.WriteLine(nome + " sua media foi " + Avnormal + " você está de Recuperação.");
+                Console.WriteLine();
+                Console.WriteLine("Informe sua nota da recuperação ");
+                double recuperacao = double.Parse(Console.ReadLine());
+
+               double notaFinal = (recuperacao + Avnormal); 
+
+                if (notaFinal >= 5)
+                {
+                    Console.WriteLine(nome + " sua nota final foi " + notaFinal + " você está aprovado na recuperação.");
+                }
+                else
+                {
+                    Console.WriteLine(nome + " sua media foi " + Avnormal + " você está Reprovado na recuperação.");
+                }
+            }
+            else
+            {
+                Console.WriteLine(nome + " sua media foi " + Avnormal + " você está Reprovado.");
+            }
+            Console.ReadKey();
+        }
+        
+    }
+}
